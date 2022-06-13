@@ -70,6 +70,19 @@ export default {
 <style lang="scss">
 img{
     width:100%;
+    padding:2%;
+}
+ul {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+}
+h2 {
+    text-align: center;
+}
+section{
+    background-color: black;
+    color: white;
 }
 
 </style>
