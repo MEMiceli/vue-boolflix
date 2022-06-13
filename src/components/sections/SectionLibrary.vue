@@ -12,6 +12,7 @@
                                 <li>Titolo Originale:{{film.original_title}}</li>
                                 <li>Lingua Originale {{film.original_language}}</li>
                                 <li>Voto{{film.vote_average}}</li>
+                                <img :src="urlImage + (film.poster_path)"  alt="">
                             </ul>
                         </li>
                     </ul>
@@ -21,11 +22,12 @@
                     <ul class="row">
                         <li class="col-12 col-sm-6 col-lg-3 mt-5" v-for="serie in data.tv" :key="serie.index">
                             <ul>
+                                <li>Serie Name:{{serie.name}}</li>
                                 <li>Original Name:{{serie.original_name}}</li>
                                 <!-- <li>Titolo Originale:{{serie.original_title}}</li> -->
                                 <li>Lingua Originale {{serie.original_language}}</li>
                                 <li>Voto{{serie.vote_average}}</li>
-                                <img src="https://image.tmdb.org/t/p/" alt="">
+                                <img :src="urlImage + (serie.poster_path)"  alt="">
                             </ul>
                         </li>
                     </ul>
@@ -44,6 +46,7 @@ export default {
     data(){
         return{
             data,
+            urlImage: "https://image.tmdb.org/t/p/w500",
            
         }
     },
@@ -51,7 +54,7 @@ export default {
         SearchBar,
     },
     methods:{
-    
+       
        
     },
     
@@ -59,6 +62,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+img{
+    width:100%;
+}
 
 </style>
