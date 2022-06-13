@@ -29,7 +29,20 @@ export default {
                 this.searchText='';
                 console.log(response.data.results);
             }).catch((error) => {
-            console.log(error);
+                console.log(error);
+            }),
+            axios.get('https://api.themoviedb.org/3/search/tv',{
+                params:{
+                    api_key:'093da68c34711cf715f097616d53b2ae',
+                    query: this.searchText,
+                    language: 'it-IT',
+                }
+            }).then((response) => {
+                data.tv = response.data.results;
+                this.searchText='';
+                console.log(response.data.results);
+            }).catch((error) => {
+                console.log(error);
             })
 
 
