@@ -10,7 +10,7 @@
                             <ul>
                                 <li>Titolo:{{film.title}}</li>
                                 <li>Titolo Originale:{{film.original_title}}</li>
-                                <li>Lingua Originale {{film.original_language}}</li>
+                                <li>Lingua Originale {{film.original_language}} <lang-flag :iso="film.original_language" /></li>
                                 <li>Voto{{film.vote_average}}</li>
                                 <img :src="urlImage + (film.poster_path)"  alt="">
                             </ul>
@@ -25,7 +25,7 @@
                                 <li>Serie Name:{{serie.name}}</li>
                                 <li>Original Name:{{serie.original_name}}</li>
                                 <!-- <li>Titolo Originale:{{serie.original_title}}</li> -->
-                                <li>Lingua Originale {{serie.original_language}}</li>
+                                <li>Lingua Originale {{serie.original_language}} <lang-flag :iso="serie.original_language" /></li>
                                 <li>Voto{{serie.vote_average}}</li>
                                 <img :src="urlImage + (serie.poster_path)"  alt="">
                             </ul>
@@ -41,6 +41,7 @@
 
 import SearchBar from '../commons/SearchBar.vue'
 import data from '../../shared/data'
+import LangFlag from 'vue-lang-code-flags';
 export default {
     name: 'SectionLibrary',
     data(){
@@ -52,6 +53,7 @@ export default {
     },
     components:{
         SearchBar,
+        LangFlag,
     },
     methods:{
        
