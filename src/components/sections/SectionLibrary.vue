@@ -11,7 +11,7 @@
                                 <li>Titolo:{{film.title}}</li>
                                 <li>Titolo Originale:{{film.original_title}}</li>
                                 <li>Lingua Originale {{film.original_language}} <lang-flag :iso="film.original_language" /></li>
-                                <li>Voto{{film.vote_average}}</li>
+                                <li>Voto{{vote}}</li>
                                 <img :src="urlImage + (film.poster_path)"  alt="">
                             </ul>
                         </li>
@@ -26,7 +26,7 @@
                                 <li>Original Name:{{serie.original_name}}</li>
                                 <!-- <li>Titolo Originale:{{serie.original_title}}</li> -->
                                 <li>Lingua Originale {{serie.original_language}} <lang-flag :iso="serie.original_language" /></li>
-                                <li>Voto{{serie.vote_average}}</li>
+                                <li>Voto{{vote}}</li>
                                 <img :src="urlImage + (serie.poster_path)"  alt="">
                             </ul>
                         </li>
@@ -56,6 +56,9 @@ export default {
         LangFlag,
     },
     methods:{
+        vote(){
+           return Math.ceil(this.info.vote_average / 2);
+        }
        
        
     },
